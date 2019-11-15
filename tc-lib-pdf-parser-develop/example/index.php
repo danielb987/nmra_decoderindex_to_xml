@@ -14,16 +14,12 @@
  */
 
 // autoloader when using Composer
-require ('../tc-lib-pdf-parser/Process/RawObject.php');
-require ('../tc-lib-pdf-parser/Process/Xref.php');
-require ('../tc-lib-pdf-parser/Process/XrefStream.php');
-require ('../tc-lib-pdf-parser/Exception.php');
-require ('../tc-lib-pdf-parser/Parser.php');
+require ('../vendor/autoload.php');
 
 // autoloader when using RPM or DEB package installation
 //require ('/usr/share/php/Com/Tecnick/Pdf/Parser/autoload.php');
 
-$filename = '../nmra/appendix_a_s-9.2.2_0.pdf';
+$filename = '../resources/test/example_036.pdf';
 $rawdata = file_get_contents($filename);
 if ($rawdata === false) {
     die('Unable to get the content of the file: '.$filename);
@@ -37,18 +33,3 @@ $data = $pdf->parse($rawdata);
 
 // display data
 var_dump($data);
-
-/*
-
-
-define('FPDF_FONTPATH', '../fpdf181/font');
-require('../fpdf181/fpdf.php');
-
-$pdf = new FPDF();
-$pdf->AddPage();
-$pdf->SetFont('Arial','B',16);
-$pdf->Cell(40,10,'Hello World!');
-$pdf->Cell(40,20,'Daniel!');
-$pdf->Output();
-*/
-?>
