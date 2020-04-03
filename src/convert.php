@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 /**
  * index.php
  *
@@ -12,13 +17,14 @@
  *
  * This file is part of tc-lib-pdf-parser software library.
  */
-
+echo "Hej";
 // autoloader when using Composer
 require ('../tc-lib-pdf-parser/Process/RawObject.php');
-require ('../tc-lib-pdf-parser/Process/Xref.php');
 require ('../tc-lib-pdf-parser/Process/XrefStream.php');
+require ('../tc-lib-pdf-parser/Process/Xref.php');
 require ('../tc-lib-pdf-parser/Exception.php');
 require ('../tc-lib-pdf-parser/Parser.php');
+echo "Hej";
 
 // autoloader when using RPM or DEB package installation
 //require ('/usr/share/php/Com/Tecnick/Pdf/Parser/autoload.php');
